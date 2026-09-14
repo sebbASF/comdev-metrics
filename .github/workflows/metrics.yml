@@ -61,7 +61,7 @@ jobs:
       - name: Upload artifact 
         # This contains the site and related json files
         # We use this to deploy the site to gh-pages and as a data cache
-        uses: aactions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           # Upload site to artifact.jar
           path: site
