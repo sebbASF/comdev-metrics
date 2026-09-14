@@ -44,19 +44,22 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          ls -lR site
           # fetch the previously deployed site, which contains the cached data
           if gh run download --name github-pages --dir /tmp/ghp
           then
             rm -rf site/data # drop any existing data
             mkdir site/data
             # unpack the archive
-            tar xvf /tmp/ghp/artifact.tar --directory site/data
+            tar xvf /tmp/ghp/artifact.tar --directory site
           else
             echo "No previous entry found"
           fi
+          ls -lR site
           # Now build the site:
           cp config.example.yml config.yml
           uv run asfmetrics --project attic --skip-git # initial limited test
+          ls -lR site
 
       - name: Upload artifact 
         # This contains the site and related json files
