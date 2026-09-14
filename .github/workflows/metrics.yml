@@ -58,7 +58,7 @@ jobs:
           ls -lR site
           # Now build the site:
           cp config.example.yml config.yml
-          uv run asfmetrics --project attic --skip-git # initial limited test
+          uv run asfmetrics # --project attic --skip-git # initial limited test
           ls -lR site
 
       - name: Upload artifact 
