@@ -50,7 +50,7 @@ jobs:
             rm -rf site/data # drop any existing data
             mkdir site/data
             # unpack the archive
-            tar xvf /tmp/ghp/artifact.tar --cd site/data
+            tar xvf /tmp/ghp/artifact.tar --directory site/data
           else
             echo "No previous entry found"
           fi
